@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>busca precos</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
 </head>
 <body>
-    <div>
-        <h1 id="valor">valor aqui</h1>
+    <div style="width: 900px; margin: auto;">
+        <div id="valor">Buscando</div>
+        <table class="table table-hover">
+            <thead>
+                <th>LOJA</th>
+                <th>NOME</th>
+                <th>ATUAL</th>
+                <th>MENOR</th>
+            </thead>
+            <tbody id="tb_values"></tbody>
+        </table>
     </div>
 </body>
-<script type="module" src="/crawler.js"></script>
+<script type="text/javascript" src="crawler.js"></script>
 </html>
