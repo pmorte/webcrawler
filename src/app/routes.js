@@ -7,8 +7,8 @@ router.get('/', (request, response) => {
     response.sendFile('index.html', { root: "." });
   })
 
-router.get('/buscapreco', async (req, res) =>{
-    var precos = await crawlercontroller.busca_preco();
+router.get('/buscapreco/:item', async (req, res) =>{
+    var precos = await crawlercontroller.busca_preco(req.params);
     res.json(precos);
 })
 
