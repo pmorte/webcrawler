@@ -1,8 +1,13 @@
 //import axios from "axios";
 
 async function get_preco() {
-    console.log("iniciando busca js");
-    itens = ['item-1', 'item-procurado-ii'];
+    itens = ['cat-quest', 'cat-quest-ii', 'minoria', 'itorah',
+        'shantae-and-the-pirate-s-curse', 'shantae-half-genie-hero-ultimate-edition',
+        'shantae-and-the-seven-sirens', 'owlboy', 'nier-automata-game-of-the-yorha-edition',
+        'momodora-reverie-under-the-moonlight', 'bloodstained-ritual-of-the-night',
+        'chasm', 'eiyuden-chronicle-rising', 'shieldmaiden', 'heroine-anthem-zero',
+        'teenage-mutant-ninja-turtles-shredders-revenge', 'gears-of-war-ultimate-edition',
+        'kitaria-fables', 'forgotton-anne'];
     for (let i = 0; i < itens.length; i++) {
         var response = await axios.get("http://localhost:3001/buscapreco/"+itens[i]);
         var tbValue = document.getElementById("tb_values");
