@@ -1,14 +1,11 @@
 import puppeteer from "puppeteer";
 class CrawlerControler{
     async busca_preco(item) {
-        console.log(item.item);
-        console.log("----------------------");
-        var itens = new Array();
         var url = "https://gg.deals/game/";
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         page.setDefaultNavigationTimeout(60000);
-        console.log("iniciando busca...");
+        //console.log("iniciando busca...");
         var preco = {};
         await page.goto(url+item.item);
         preco = await page.evaluate(()=>{
