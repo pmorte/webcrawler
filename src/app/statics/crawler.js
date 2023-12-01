@@ -9,7 +9,7 @@ async function get_preco() {
         'teenage-mutant-ninja-turtles-shredders-revenge', 'gears-of-war-ultimate-edition',
         'kitaria-fables', 'forgotton-anne'];
     for (let i = 0; i < itens.length; i++) {
-        var response = await axios.get("buscapreco/"+itens[i]);
+        var response = await axios.get("buscapreco/online/"+itens[i]);
         var tbValue = document.getElementById("tb_values");
         var novaLinha = tbValue.insertRow();
 
