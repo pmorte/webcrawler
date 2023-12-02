@@ -19,13 +19,15 @@ async function get_preco() {
         var atual = novaLinha.insertCell(3);
         var desconto = novaLinha.insertCell(4);
         var menor = novaLinha.insertCell(5);
+        var dataPrice = novaLinha.insertCell(6);
 
         jogo.innerHTML = `<img src='${response.data.img_jogo}' style='max-width:90px; max-height:55px'>`;
         loja.innerHTML = `<img src='${response.data.img_loja}' style='max-width:90px; max-height:35px'>`;
         nome.innerHTML = response.data.nome;
         atual.innerHTML = response.data.atual;
         desconto.innerHTML = response.data.desconto;
-        menor.innerHTML = response.data.menor;   
+        menor.innerHTML = response.data.menor;
+        dataPrice.innerHTML = response.data.dataPrice;
     }
 }
 
