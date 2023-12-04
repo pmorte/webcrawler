@@ -21,7 +21,9 @@ class CrawlerControler{
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 OPR/104.0.0.0 (Edition std-1)"
         };
         var options = {
-            headers: browserHeadrs
+            headers: browserHeadrs,
+            timeout: 120000,
+            httpsAgent: new https.Agent({ keepAlive: true })
         };
         try {
             var pagHtml = await axios.get(url+item.item, options);
