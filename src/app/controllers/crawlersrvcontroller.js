@@ -1,5 +1,6 @@
 import * as cheerio from 'cheerio';
 import axios from "axios";
+import https from 'https';
 
 class CrawlerControler{
     async busca_preco(item) {
