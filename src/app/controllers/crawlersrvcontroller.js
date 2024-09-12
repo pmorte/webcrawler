@@ -30,14 +30,18 @@ class CrawlerControler{
             var pagHtml = await axios.get(url+item.item, options);
             const $ = cheerio.load(pagHtml.data);
             var menor = $('.price-inner.numeric').text().split("R$");
+            var gray = $('.price-inner.numeric').text().split("R$");
             if($(".empty-state-text").html() == null) {
                 menor = "R$: "+menor[3];
+                gray = "R$: "+gray[2];
             }
             else {
                 menor = "R$: "+menor[2];
+                gray = "-----";
             }
             if (menor.substring(menor.length-4) == "Free" || menor.substring(menor.length-5) == "Free~") {
                 menor = "Free";
+                gray = gray.split("Free~")[0];
             }
             var preco = {
                 "nome": "",
@@ -46,7 +50,8 @@ class CrawlerControler{
                 "img_loja": $(".d-flex.flex-align-center.shop-link").find("a > img").attr("src"),
                 "desconto": $(".discount.label").html(),
                 "img_jogo": $(".image-game").attr("src"),
-                "dataPrice": $(".game-price-active-label").html()
+                "dataPrice": $(".game-price-active-label").html(),
+                "gray": gray
             }
             preco.nome = item.item.replace(/-/g," ");
         }
